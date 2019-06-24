@@ -13,6 +13,7 @@ import ru.aisdev.rxjavamvvm.rx.viewmodel.RepoViewModel
 
 class MyStarsRepos : AppCompatActivity() {
 
+    //
     lateinit var repoAdapter: GithubRepoAdapter
     private lateinit var repoViewModel: RepoViewModel
 
@@ -23,9 +24,7 @@ class MyStarsRepos : AppCompatActivity() {
         val llm = LinearLayoutManager(applicationContext)
         val divider = DividerItemDecoration(myStarsList.context,DividerItemDecoration.VERTICAL)
         myStarsList.layoutManager = llm
-
         repoAdapter = GithubRepoAdapter()
-
         myStarsList.adapter = repoAdapter
         myStarsList.addItemDecoration(divider)
 

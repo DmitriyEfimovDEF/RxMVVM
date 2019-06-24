@@ -9,8 +9,8 @@ import java.util.concurrent.TimeUnit
 
 object GithubApiClient {
 
-    val BASE_URL = "https://api.github.com/"
-    val githubService: GithubService
+    private const val BASE_URL = "https://api.github.com/"
+    private val githubService: GithubService
 
     init {
         val loggingInterceptor = HttpLoggingInterceptor()

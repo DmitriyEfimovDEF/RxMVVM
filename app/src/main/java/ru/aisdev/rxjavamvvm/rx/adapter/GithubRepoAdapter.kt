@@ -11,7 +11,7 @@ import ru.aisdev.rxjavamvvm.rx.model.Repo
 
 class GithubRepoAdapter: RecyclerView.Adapter<GithubRepoAdapter.StarRepoViewHolder>() {
 
-    private val data = ArrayList<Repo>()
+     val data = ArrayList<Repo>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StarRepoViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.stars_item,parent,false)
@@ -29,20 +29,20 @@ class GithubRepoAdapter: RecyclerView.Adapter<GithubRepoAdapter.StarRepoViewHold
         holder.repoCount.text = data[position].stars.toString()
         data[position].desc?.let {
             holder.repoDesc.text = data[position].desc
-        }?:run {
+        } ?:run {
             holder.repoDesc.text = " no description available"
         }
 
     }
 
     class StarRepoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val repoName = view.repoName
-        val repoDesc = view.desc
-        val repoLang = view.lang
-        val repoCount = view.starsCount
+        val repoName = view.repoName!!
+        val repoDesc = view.desc!!
+        val repoLang = view.lang!!
+        val repoCount = view.starsCount!!
     }
 
-    fun addRepos(repos: ArrayList<Repo>) {
+    fun addRepos(repos: List<Repo>) {
         data.clear()
         data.addAll(repos)
         notifyDataSetChanged()
