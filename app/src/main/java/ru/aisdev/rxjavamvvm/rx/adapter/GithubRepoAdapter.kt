@@ -42,7 +42,7 @@ class GithubRepoAdapter: RecyclerView.Adapter<GithubRepoAdapter.StarRepoViewHold
         val repoCount = view.starsCount
     }
 
-    fun addRepos(repos: List<Repo>) {
+    fun addRepos(repos: ArrayList<Repo>) {
         data.clear()
         data.addAll(repos)
         notifyDataSetChanged()
